@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Earth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- GALAXY GLOBE (FULL SCREEN TOP) -->
+  <div id="globe-container"></div>
+
+  <!-- UI OVERLAY -->
+  <div class="ui">
+
+    <div class="top-bar">
+      <h1>Weather</h1>
+    </div>
+
+    <div class="search-box">
+      <input id="locationInput" type="text" placeholder="Search any place" />
+      <button id="searchBtn">🔍</button>
+    </div>
+
+    <div id="loader" class="loader hidden"></div>
+
+    <div id="weather" class="weather-card hidden">
+      <h2 id="place"></h2>
+      <p id="time"></p>
+
+      <div class="temp-row">
+        <img id="icon" />
+        <span id="temp"></span>
+      </div>
+
+      <p class="condition" id="condition"></p>
+
+      <div class="stats">
+        <div><span>Humidity</span><p id="humidity"></p></div> 
+        <div><span>Wind</span><p id="wind"></p></div>
+        <div><span>AQI</span><p id="aqi"></p></div>
+      </div>
+    </div>
+
+    <p id="error" class="error hidden">Location not found</p>
+
+  </div>
+
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    }
+
+    body {
+    background: black;
+    overflow: hidden;
+    color: white;
+    }
+
+    /* FULLSCREEN GLOBE */
+    #globe-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    }
+
+    /* UI FLOATS ABOVE GLOBE */
+    .ui {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    pointer-events: none;
+    }
+
+    /* Allow interaction only where needed */
+    .search-box,
+    .weather-card,
+    .top-bar {
+    pointer-events: auto;
+    }
+
+    .top-bar {
+    text-align: center;
+    margin-bottom: 12px;
+    }
+
+    .search-box {
+    display: flex;
+    background: rgba(30,30,30,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 8px;
+    margin-bottom: 14px;
+    }
+
+    .search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    padding-left: 10px;
+    }
+
+    .search-box button {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    border-radius: 12px;
+    padding: 8px 14px;
+    color: white;
+    }
+
+    .weather-card {
+    background: rgba(20,20,20,0.75);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 18px;
+    margin-top: auto;
+    animation: rise 0.4s ease;
+    }
+
+    .temp-row {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+    }
+
+    .temp-row img {
+    width: 70px;
+    }
+
+    #temp {
+    font-size: 48px;
+    margin-left: 10px;
+    }
+
+    .stats {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .stats div span {
+    font-size: 12px;
+    opacity: 0.7;
+    }
+
+    .loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    margin: 30px auto;
+    animation: spin 1s linear infinite;
+    }
+
+    .error {
+    text-align: center;
+    margin-top: 20px;
+    color: #ff6b6b;
+    }
+
+    .hidden {
+    display: none;
+    }
+
+    @keyframes spin {
+    to { transform: rotate(360deg); }
+    }
+
+    @keyframes rise {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+    }
